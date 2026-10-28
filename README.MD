@@ -17,7 +17,7 @@ local posts and URLs, rather than moving existing ActivityPub objects.
 | Component | Supported / verified |
 | --- | --- |
 | Export host | Linux or macOS, Python 3.9+, standard library only |
-| Source | GoToSocial's authenticated Mastodon-compatible account/status/source API |
+| Source | [GoToSocial 0.22.3+git-5a6c8e2](https://codeberg.org/superseriousbusiness/gotosocial), using its authenticated Mastodon-compatible account/status/source API |
 | Standalone archive check | Ruby 2.6+; no Mastodon installation needed |
 | Destination | **Mastodon 4.7.3 only**, with administrator access |
 | Installation | Native installation or Docker Compose |
@@ -27,8 +27,8 @@ The development build was used in a real migration: 373 archived records,
 posts imported as 147 Mastodon statuses. Seven long posts became two-part threads.
 A subsequent run recognized all 140 sources as already imported. An operator
 also checked a rendered post with its historical date, media, links and hashtags.
-These are operator-reported results, not an automated end-to-end test suite. The
-source server's GoToSocial version was not recorded.
+The source server ran **GoToSocial 0.22.3+git-5a6c8e2**. These are operator-reported
+results, not an automated end-to-end test suite.
 
 Other Mastodon versions are rejected, because this importer depends on internal
 models and callbacks. Do not remove the version guard without reviewing those
